@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="page">
+      <div class="header">
+        <h1>ASCII ART GENERATOR</h1>
+        <p>> type something. make it big.</p>
+      </div>
+
+      <form class="card_con" action="/ascii-art" method="POST">
+        <div>
+          <label class="field-label">// INPUT TEXT</label>
+          <input type="text" name="text" placeholder="Enter text..." />
+        </div>
+        <div>
+          <label class="field-label">// SELECT BANNER</label>
+          <select name="banner">
+            <option value="standard.txt">Standard</option>
+            <option value="shadow.txt">Shadow</option>
+            <option value="thinkertoy.txt">Thinkertoy</option>
+          </select>
+        </div>
+        <button type="submit">[ GENERATE ]</button>
+      </form>
+
+      <div class="result-wrapper">
+        <span class="result-label">// OUTPUT</span>
+        <pre>{{ .Result }}</pre>
+      </div>
+
+      <div class="footer">BISHOP ASCII ART v1.0 &nbsp;|&nbsp; PRESS START</div>
+    </div>
+  </body>
+</html>
