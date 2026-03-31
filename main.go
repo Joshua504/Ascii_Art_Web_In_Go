@@ -1,7 +1,6 @@
 package main
 
 import (
-	// "fmt"
 	"html/template"
 	"net/http"
 	"os"
@@ -146,6 +145,7 @@ func generateAsciiArt(args string, charMap map[rune][]string) string {
 }
 
 func main() {
+	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 	http.HandleFunc("/", handleHome)
     http.HandleFunc("/ascii-art", handleAsciiArt)
     http.ListenAndServe(":8080", nil)
